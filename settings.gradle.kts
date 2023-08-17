@@ -175,3 +175,5 @@ include(":maplibre-adapter")
 include(":aws-pinpoint-core")
 include(":aws-push-notifications-pinpoint-common")
 include(":aws-logging-cloudwatch")
+
+includeBuild("../smithy-starter")

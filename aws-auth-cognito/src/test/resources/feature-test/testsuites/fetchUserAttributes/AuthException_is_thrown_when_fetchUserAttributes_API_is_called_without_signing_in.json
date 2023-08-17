@@ -1,5 +1,5 @@
 {
-    "description": "AuthException is thrown when fetchUserAttributes API is called without signing in",
+
     "preConditions": {
         "amplify-configuration": "authconfiguration.json",
         "state": "SignedOut_Configured.json",

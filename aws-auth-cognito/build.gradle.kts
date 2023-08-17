@@ -17,7 +17,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
     id("com.android.library")
     id("kotlin-android")
+
 }
+
 
 apply(from = rootProject.file("configuration/publishing.gradle"))
 apply(from = rootProject.file("configuration/checkstyle.gradle"))
@@ -29,14 +31,25 @@ dependencies {
     implementation(project(":aws-core"))
     implementation(project(":aws-auth-plugins-core"))
     implementation(dependency.kotlin.coroutines)
+
+
+
     implementation(dependency.kotlin.serializationJson)
     implementation(dependency.androidx.appcompat)
     implementation(dependency.androidx.security)
     implementation(dependency.androidx.browser)
 
+
     implementation(dependency.aws.http)
     implementation(dependency.aws.cognitoidentity)
     implementation(dependency.aws.cognitoidentityprovider)
+
+
+
+    testImplementation("androidx.core:core-ktx:+")
+
+    testImplementation("org.example:smithy-starter")
+
 
     testImplementation(project(":testutils"))
     //noinspection GradleDependency
@@ -54,12 +67,16 @@ dependencies {
     testImplementation(testDependency.androidx.test.core)
     testImplementation(testDependency.kotlin.reflection)
 
+
     androidTestImplementation(dependency.gson)
     //noinspection GradleDependency
     androidTestImplementation(testDependency.aws.sdk.core)
     androidTestImplementation(testDependency.androidx.test.runner)
     androidTestImplementation(testDependency.androidx.test.junit)
     androidTestImplementation(testDependency.kotlin.test.coroutines)
+
+
     androidTestImplementation(project(":aws-api"))
     androidTestImplementation(project(":testutils"))
+
 }

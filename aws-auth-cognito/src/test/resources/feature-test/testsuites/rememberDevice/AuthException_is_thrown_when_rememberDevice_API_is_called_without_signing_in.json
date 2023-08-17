@@ -1,5 +1,4 @@
 {
-    "description": "AuthException is thrown when rememberDevice API is called without signing in",
     "preConditions": {
         "amplify-configuration": "authconfiguration.json",
         "state": "SignedOut_Configured.json",

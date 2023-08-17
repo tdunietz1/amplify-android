@@ -1,0 +1,53 @@
+{
+  "preConditions": {
+    "mockedResponses": [
+      {
+        "type": "cognitoUserPools",
+        "apiName": "signUp",
+        "response": {
+          "error": {
+            "errorType": "InvalidStateException"
+          }
+        },
+        "responseType": "Error"
+      }
+    ],
+    "state": "SigningIn_SigningIn.json",
+    "amplifyconfiguration": "authconfiguration.json"
+  },
+  "api": {
+    "name": "signUp",
+    "params": {
+      "password": "{password}",
+      "username": "{user}"
+    },
+    "options": {
+      "userAttributes": "{\"email\":\"{email}\"}"
+    }
+  },
+  "validations": [
+    {
+      "shapetype": "cognito",
+      "shape": {
+        "cognito": {
+          "apiName": "signUp",
+          "request": {
+            "request": "{\"password\":\"Somepassword13!\",\"clientId\":\"4************************3\",\"userAttributes\":[{\"name\":\"email\",\"value\":\"joonwonc@amazon.com\"}],\"secretHash\":\"4******************************************\u003d\",\"username\":\"a*************3\"}",
+            "apiName": "signUp",
+            "type": "AWSCognitoIdentityProviderService"
+          },
+          "type": "cognitoidentityprovider"
+        }
+      }
+    },
+    {
+      "shapetype": "amplify",
+      "shape": {
+        "amplify": {
+          "apiName": "signUp",
+          "response": "{\"isSignUpComplete\":false,\"nextStep\":{\"errorType\":\"InvalidStateException\",\"signUpStep\":\"CONFIRM_SIGN_UP_STEP\",\"additionalInfo\":{},\"message\":\"Auth state is an invalid state, cannot process the request.\"}}"
+        }
+      }
+    }
+  ]
+}

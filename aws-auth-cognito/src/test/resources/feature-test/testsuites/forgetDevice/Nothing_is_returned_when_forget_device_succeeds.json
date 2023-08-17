@@ -1,5 +1,5 @@
 {
-    "description": "Nothing is returned when forget device succeeds",
+
     "preConditions": {
         "amplify-configuration": "authconfiguration.json",
         "state": "SignedIn_SessionEstablished.json",
